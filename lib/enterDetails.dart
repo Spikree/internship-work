@@ -38,13 +38,39 @@ class _EnterDetailsState extends State<EnterDetails> {
     "Item 5"
   ];
 
-  void _clearErrors() {
+  void _clearNameError() {
     setState(() {
       _nameError = null;
+    });
+  }
+
+  void _clearEmployeeError() {
+    setState(() {
       _employeeCodeError = null;
+    });
+  }
+
+  void _clearMobileNumberError() {
+    setState(() {
       _mobileNumberError = null;
+    });
+  }
+
+  void _clearPasswordError() {
+    setState(() {
       _passwordError = null;
+    });
+  }
+
+  void _clearConfirmPasswordError() {
+    setState(() {
       _confirmPasswordError = null;
+    });
+  }
+
+  void _clearOrgError() {
+    setState(() {
+      _organizationError = null;
     });
   }
 
@@ -64,13 +90,13 @@ class _EnterDetailsState extends State<EnterDetails> {
                   children: [
                     Column(
                       children: [
-                        Padding(
+                        const Padding(
                           padding: EdgeInsets.all(10),
                         ),
                         Image.asset('images/signup.png'),
                       ],
                     ),
-                    Row(
+                    const Row(
                       children: [
                         Text(
                           'Sign-up',
@@ -81,10 +107,10 @@ class _EnterDetailsState extends State<EnterDetails> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 25,
                     ),
-                    Row(
+                    const Row(
                       children: [
                         Text(
                           'Full name',
@@ -95,13 +121,13 @@ class _EnterDetailsState extends State<EnterDetails> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     TextFormField(
                       controller: _fullNameController,
                       decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.person_3),
+                        prefixIcon: const Icon(Icons.person_3),
                         fillColor: Colors.grey.shade100,
                         filled: true,
                         hintText: 'Full name',
@@ -120,10 +146,10 @@ class _EnterDetailsState extends State<EnterDetails> {
                         return null;
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 25,
                     ),
-                    Row(
+                    const Row(
                       children: [
                         Text(
                           'Employee Code',
@@ -134,13 +160,13 @@ class _EnterDetailsState extends State<EnterDetails> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     TextFormField(
                       controller: _employeeCodeController,
                       decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.badge),
+                        prefixIcon: const Icon(Icons.badge),
                         fillColor: Colors.grey.shade100,
                         filled: true,
                         hintText: 'Employee code',
@@ -159,10 +185,10 @@ class _EnterDetailsState extends State<EnterDetails> {
                         return null;
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 25,
                     ),
-                    Row(
+                    const Row(
                       children: [
                         Text(
                           'Mobile No',
@@ -173,13 +199,14 @@ class _EnterDetailsState extends State<EnterDetails> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     TextFormField(
                       controller: _mobileNumberController,
+                      keyboardType: TextInputType.number,
                       decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.call),
+                        prefixIcon: const Icon(Icons.call),
                         fillColor: Colors.grey.shade100,
                         filled: true,
                         hintText: 'Mobile No',
@@ -200,10 +227,10 @@ class _EnterDetailsState extends State<EnterDetails> {
                         return null;
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 25,
                     ),
-                    Row(
+                    const Row(
                       children: [
                         Text(
                           'Organization',
@@ -214,7 +241,7 @@ class _EnterDetailsState extends State<EnterDetails> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     DropdownButtonFormField<String>(
@@ -231,7 +258,7 @@ class _EnterDetailsState extends State<EnterDetails> {
                         );
                       }).toList(),
                       decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.corporate_fare),
+                        prefixIcon: const Icon(Icons.corporate_fare),
                         fillColor: Colors.grey.shade100,
                         filled: true,
                         hintText: 'Select organization',
@@ -248,13 +275,13 @@ class _EnterDetailsState extends State<EnterDetails> {
                           });
                         }
                       },
-                      style: TextStyle(color: Colors.black, fontSize: 16),
+                      style: const TextStyle(color: Colors.black, fontSize: 16),
                     ),
-                    SizedBox(height: 20),
-                    SizedBox(
+                    const SizedBox(height: 20),
+                    const SizedBox(
                       height: 25,
                     ),
-                    Row(
+                    const Row(
                       children: [
                         Text(
                           'Set password',
@@ -265,13 +292,13 @@ class _EnterDetailsState extends State<EnterDetails> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     TextFormField(
                       controller: _passwordController,
                       decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.lock),
+                        prefixIcon: const Icon(Icons.lock),
                         fillColor: Colors.grey.shade100,
                         filled: true,
                         hintText: 'Set password',
@@ -310,10 +337,10 @@ class _EnterDetailsState extends State<EnterDetails> {
                         return null;
                       },
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 25,
                     ),
-                    Row(
+                    const Row(
                       children: [
                         Text(
                           'Confirm password',
@@ -324,13 +351,13 @@ class _EnterDetailsState extends State<EnterDetails> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     TextFormField(
                       controller: _confirmPasswordController,
                       decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.lock),
+                        prefixIcon: const Icon(Icons.lock),
                         fillColor: Colors.grey.shade100,
                         filled: true,
                         hintText: 'Confirm password',
@@ -368,14 +395,20 @@ class _EnterDetailsState extends State<EnterDetails> {
                         return null;
                       },
                     ),
-                    SizedBox(
-                      height: 25,
+                    const SizedBox(
+                      height: 30,
                     ),
                     Row(
                       children: [
                         ElevatedButton(
                           onPressed: () {
                             if (_formKey.currentState!.validate()) {
+                              _clearNameError();
+                              _clearEmployeeError();
+                              _clearMobileNumberError();
+                              _clearOrgError();
+                              _clearPasswordError();
+                              _clearConfirmPasswordError();
                               // Extract values from controllers
                               String fullName = _fullNameController.text;
                               int employeeCode =
@@ -392,20 +425,23 @@ class _EnterDetailsState extends State<EnterDetails> {
                               print('Password: $password');
                               print('Confirm Password: $confirmPassword');
                               print('selected value: $selectedValue');
-
-                              // Perform signup logic here
-
-                              // Move to the next screen or perform other actions
                             }
                           },
-                          child: Text(
-                            'Save',
-                            style: TextStyle(
-                              color: Colors.white,
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 5, vertical: 1),
+                            child: Text(
+                              'Save',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                                color: Colors.white,
+                                height: 3,
+                              ),
                             ),
                           ),
                           style: ElevatedButton.styleFrom(
-                            primary: Colors.blue.shade400,
+                            backgroundColor: Colors.blue.shade400,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(10),
                             ),
@@ -413,7 +449,7 @@ class _EnterDetailsState extends State<EnterDetails> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
                     Padding(
@@ -421,7 +457,7 @@ class _EnterDetailsState extends State<EnterDetails> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
+                          const Text(
                             'Powered By EduplusCampus-VGESPL',
                             style: TextStyle(
                               color: Colors.blue,

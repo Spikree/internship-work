@@ -5,7 +5,7 @@ void main() {
 }
 
 class Verify extends StatefulWidget {
-  const Verify({super.key});
+  const Verify({Key? key}) : super(key: key);
 
   @override
   State<Verify> createState() => _VerifyState();
@@ -14,25 +14,25 @@ class Verify extends StatefulWidget {
 class _VerifyState extends State<Verify> {
   final _formKey = GlobalKey<FormState>();
 
-  TextEditingController _emailController = TextEditingController();
-  String? _emailError;
+  TextEditingController _otpController = TextEditingController();
+  String? _otpError;
 
-  void _validateEmail() {
+  void _validateOTP() {
     _clearErrors();
-    String? value = _emailController.text;
-    if (value == null || value.isEmpty) {
+    String? value = _otpController.text;
+    if (value == null || value.isEmpty || value.length != 6) {
       setState(() {
-        _emailError = 'Please enter your OTP';
+        _otpError = 'Please enter a valid 6-digit OTP';
       });
     } else {
-      // Navigate or perform actions after email verification
+      // Navigate or perform actions after OTP verification
       Navigator.pushNamed(context, 'enterDetails');
     }
   }
 
   void _clearErrors() {
     setState(() {
-      _emailError = null;
+      _otpError = null;
     });
   }
 
@@ -64,7 +64,7 @@ class _VerifyState extends State<Verify> {
                         Padding(
                           padding: const EdgeInsets.only(top: 50),
                           child: Text(
-                            'OTP sent on your email',
+                            'OTP sent to your email',
                             style: TextStyle(
                               fontWeight: FontWeight.w900,
                               fontSize: 20,
@@ -87,7 +87,8 @@ class _VerifyState extends State<Verify> {
                     ),
                     SizedBox(height: 25),
                     TextFormField(
-                      controller: _emailController,
+                      controller: _otpController,
+                      keyboardType: TextInputType.number,
                       decoration: InputDecoration(
                         fillColor: Colors.grey.shade100,
                         filled: true,
@@ -95,7 +96,7 @@ class _VerifyState extends State<Verify> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(7),
                         ),
-                        errorText: _emailError,
+                        errorText: _otpError,
                       ),
                     ),
                     SizedBox(
@@ -103,7 +104,7 @@ class _VerifyState extends State<Verify> {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        _validateEmail();
+                        _validateOTP();
                       },
                       child: Text(
                         'Verify OTP',
@@ -112,14 +113,14 @@ class _VerifyState extends State<Verify> {
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.red,
+                        primary: Colors.blue,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                     ),
                     SizedBox(
-                      height: 170,
+                      height: 175,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(
@@ -136,7 +137,7 @@ class _VerifyState extends State<Verify> {
                             ),
                           ),
                           SizedBox(
-                            height: 250,
+                            height: 0,
                           ),
                           Expanded(
                             child: Image.asset(

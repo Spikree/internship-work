@@ -83,7 +83,7 @@ class _VerifyEmailState extends State<VerifyEmail> {
                         prefixIcon: Icon(Icons.email),
                         fillColor: Colors.grey.shade100,
                         filled: true,
-                        hintText: 'Email',
+                        hintText: 'example@email.com',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(7),
                         ),
@@ -115,14 +115,14 @@ class _VerifyEmailState extends State<VerifyEmail> {
                         ),
                       ),
                       style: ElevatedButton.styleFrom(
-                        primary: Colors.red,
+                        primary: Colors.blue,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                     ),
                     SizedBox(
-                      height: 250,
+                      height: 195,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 1, bottom: 40),
